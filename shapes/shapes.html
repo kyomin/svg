@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG - Shapes</title>
+		<style>
+			.shapes {
+				width: 600px;
+				height: 400px;
+				background: #ddd;
+			}
+			rect {
+				fill: orange; /* svg에서의 background */
+				stroke: dodgerblue; /* svg에서의 border */
+			}
+			ellipse {
+				fill: #fff000;
+			}
+			.group-1 {
+				stroke-width: 10;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="shapes">
+			<!-- g 태그를 이용해 그루핑. 그 내부를 한꺼번에 적용할 때 쓴다. -->
+			<g class="group-1">
+				<!-- 사각형에서의 x, y 좌표는 왼쪽 위 모서리 기준 -->
+				<rect x="10" y="20" width="200" height="100" />
+
+				<!-- 사각형에서의 rx, ry는 꼭짓점의 둥근 정도 -->
+				<rect x="50" y="170" rx="10" ry="10" width="100" height="100" />
+			</g>
+
+			<!-- 원에서의 cx, cy는 원의 중심 위치, 크기는 반지름 r로 설정 -->
+			<circle cx="350" cy="250" r="30" />
+
+			<!-- 타원에서는 rx, ry를 통해 가로, 세로 지름 크기 설정 -->
+			<ellipse cx="200" cy="330" rx="100" ry="50" />
+
+			<!-- 직선에서의 x1, x2, y1, y2는 각각 x축, y축의 시작점, 끝점 -->
+			<line x1="10" x2="400" y1="30" y2="300" stroke="blue" />
+
+			<!-- 각 선분들을 이은 도형 -->
+			<polyline points="0 0, 200 100, 150 300" stroke="red" stroke-width="5" />
+		</svg>
+	</body>
+</html>

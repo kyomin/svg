@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG - Path</title>
+		<style>
+			.shapes {
+				width: 600px;
+				height: 400px;
+				background: #ddd;
+			}
+			path {
+				stroke: tomato;
+				stroke-width: 5px;
+				fill: transparent;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="shapes">
+			<!-- 
+        다각형 
+
+        M: 시작점
+        L: 라인
+        H: 수평(가로)
+        V: 수직(세로)
+      -->
+			<path d="M 300 200 L 500 100 H 50 V 300 Z" />
+
+			<!-- 곡선 -->
+			<path d="M 100 150 C 100 150, 300 50, 500 250" />
+		</svg>
+	</body>
+</html>
