@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG - Text</title>
+		<style>
+			body {
+				margin: 0;
+			}
+			.svg {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				background: #ddd;
+			}
+			text {
+				font-size: 1.5rem;
+				font-weight: bold;
+				fill: red; /* color */
+			}
+			path {
+				stroke: red;
+				fill: transparent;
+			}
+			/* svg의 text 부분 스타일링을 위함 */
+			tspan {
+				fill: dodgerblue;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="svg" xmlns="http://www.w3.org/2000/svg">
+			<!-- defs 안에 참조할 path를 넣는다 -->
+			<defs>
+				<path
+					id="text-curve"
+					d="M 50 400 C 50 400, 300 500, 400 400 C 400 400, 600 170, 700 300"
+				/>
+			</defs>
+			<text x="20" y="50">
+				<!-- 참조할 path의 id를 연결하여 path를 따라 텍스트를 그린다 -->
+				<textPath href="#text-curve">
+					Lorem
+					<tspan>ipsum</tspan>
+					dolor sit amet consectetur adipisicing elit. Blanditiis placeat, ab
+					vero suscipit quos modi tempora saepe laudantium quis, officia error
+					rerum, recusandae ipsa ea atque fugit rem! Tenetur, nesciunt.
+				</textPath>
+			</text>
+		</svg>
+	</body>
+</html>
