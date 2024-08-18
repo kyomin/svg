@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG - Mask</title>
+		<style>
+			.svg-mask {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: #ddd;
+			}
+			.svg-mask text {
+				font-size: 5rem;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="svg-mask">
+			<defs>
+				<!-- 마스킹 처리가 된 해당 위치의 원 이외의 영역은 안 보인다 -->
+				<!-- 기본적으로 흰 색이어야 마스킹 처리가 된다 -->
+				<mask id="mask-circle">
+					<circle cx="250" cy="80" r="40" fill="white" />
+				</mask>
+			</defs>
+			<!-- 텍스트 영역에 마스크 적용 -->
+			<g mask="url(#mask-circle)">
+				<text x="10" y="100">
+					Hello SVG! Hello SVG! Hello SVG! Hello SVG! Hello SVG!
+				</text>
+			</g>
+		</svg>
+	</body>
+</html>
