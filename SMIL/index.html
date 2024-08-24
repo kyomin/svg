@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>SVG - SMIL</title>
+		<style>
+			body {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<svg class="svg" viewBox="0 0 1000 1000">
+			<defs>
+				<script>
+					window.addEventListener('DOMContentLoaded', () => { 
+            const rectElem = document.querySelector('.rect');
+            const aniElem = document.querySelector('.ani');
+
+            <!-- 클릭 시 사각형이 움직이도록 제어한다 -->
+            rectElem.addEventListener('click', () => {
+              aniElem.beginElement();
+            });
+          });
+				</script>
+			</defs>
+			<rect class="rect" x="10" y="10" width="20%" height="20%">
+				<!-- 
+          attributeName: 어떤 속성 변화시킬 것인가?
+          dur: 얼마 동안
+          to: 어느 값으로
+          repeatCount: 반복 횟수
+          begin: 언제 애니메이션을 실행할 것인가?
+          ㄴ indefinite는 정해지지 않은 값으로 시작은 안 하도록 한다
+        -->
+				<animate
+          class="ani"
+          attributeName="x" 
+          dur="1s" 
+          to="700" 
+          repeatCount="1"
+          fill="freeze"
+          begin="indefinite"
+        />
+			</rect>
+		</svg>
+	</body>
+</html>
